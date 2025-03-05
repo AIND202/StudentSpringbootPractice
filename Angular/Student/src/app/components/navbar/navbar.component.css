@@ -1,0 +1,35 @@
+.text-color {
+    color: white;
+  }
+
+  .gradient-custom {
+    background: linear-gradient(to right, #EB7979, #BEB898, #8B683E);
+  }
+
+  .navbar .navbar-brand {
+    color: inherit;
+    font-weight: bold;
+  }
+
+  .navbar .nav-link {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 8px 10px;
+    color: inherit;
+  }
+  
+  ul.navbar-nav.ms-auto.mb-2.mb-lg-0 {
+    display: flex;
+    align-items: center;
+}
+  .nav-item { flex: 1;
+    display: flex; 
+    justify-content: center; 
+}
+    
+
+.navbar-nav .nav-item {
+   margin-right: 20px; /* Adjust the spacing as needed */ 
+}
+

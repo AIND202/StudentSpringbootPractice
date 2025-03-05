@@ -1,0 +1,20 @@
+.btn .studenttable{
+    margin: 10px;
+}
+
+.studenttable{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background: #eee7e7;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.searchbox{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    width: 300px;
+}

@@ -1,0 +1,64 @@
+
+<form class="form-container" [formGroup]="studentForm" (ngSubmit)="onSubmit()">
+    
+    <h2 class="text-center mb-4 fw-bold">{{ isEdit ? 'Edit Student' : 'Add Student' }}</h2> 
+    <!-- Student ID -->
+    <div class="mb-3">
+      <label for="studentId" class="form-label">Student ID<span class="text-danger">*</span></label>
+      <input type="number" name="studentId" formControlName="studentId" class="form-control" required>
+      <div *ngIf="studentForm.get('studentId')?.invalid && (studentForm.get('studentId')?.touched || studentForm.get('studentId')?.dirty)">
+        <small *ngIf="studentForm.get('studentId')?.errors?.['required']" class="error-message">Student ID is required</small>
+        <small *ngIf="studentForm.get('studentId')?.errors?.['min']" class="error-message">Student ID should be greater than 0</small>
+      </div>
+    </div>
+
+    <!-- Student Name -->
+    <div class="mb-3">
+        <label for="studentName" class="form-label">Student Name<span class="text-danger">*</span></label>
+        <input type="text" name="studentName" formControlName="studentName" class="form-control" required>
+        <div *ngIf="studentForm.get('studentName')?.invalid && (studentForm.get('studentName')?.touched || studentForm.get('studentName')?.dirty)">
+          <small *ngIf="studentForm.get('studentName')?.errors?.['required']" class="error-message">Student Name is required</small>
+        </div>
+      </div>
+
+      <!-- Student Age -->
+    <div class="mb-3">
+        <label for="studentAge" class="form-label">Student Age<span class="text-danger">*</span></label>
+        <input type="number" name="studentAge" formControlName="studentAge" class="form-control" required>
+        <div *ngIf="studentForm.get('studentAge')?.invalid && (studentForm.get('studentAge')?.touched || studentForm.get('studentAge')?.dirty)">
+          <small *ngIf="studentForm.get('studentAge')?.errors?.['required']" class="error-message">Student Age is required</small>
+          <small *ngIf="studentForm.get('studentAge')?.errors?.['min']" class="error-message">Student Age should be greater than 18</small>
+        </div>
+      </div>
+
+      <!-- Student Email -->
+    <div class="mb-3">
+        <label for="studentEmail" class="form-label">Student Email<span class="text-danger">*</span></label>
+        <input type="email" name="studentEmail" formControlName="studentEmail" class="form-control" required>
+        <div *ngIf="studentForm.get('studentEmail')?.invalid && (studentForm.get('studentEmail')?.touched || studentForm.get('studentEmail')?.dirty)">
+          <small *ngIf="studentForm.get('studentEmail')?.errors?.['required']" class="error-message">Student Email is required</small>
+          <small *ngIf="studentForm.get('studentEmail')?.errors?.['email']" class="error-message">Invalid email format</small>
+        </div>
+      </div>
+
+      <!-- Student Address -->
+    <div class="mb-3">
+        <label for="studentAddress" class="form-label">Student Address<span class="text-danger">*</span></label>
+        <textarea name="studentAddress" formControlName="studentAddress" class="form-control" required></textarea>
+        <div *ngIf="studentForm.get('studentAddress')?.invalid && (studentForm.get('studentAddress')?.touched || studentForm.get('studentAddress')?.dirty)">
+          <small *ngIf="studentForm.get('studentAddress')?.errors?.['required']" class="error-message">Student Address is required</small>
+        </div>
+      </div>
+
+      <div *ngIf="message != null">
+            {{message}}
+      </div>
+  
+    <!-- Buttons -->
+    <div class="d-grid mt-4">
+      <button type="submit" class="btn btn-primary" *ngIf="!isEdit">Add Student</button>
+      <button type="submit" class="btn btn-primary" *ngIf="isEdit">Edit Student</button>
+    </div>
+
+    
+</form>

@@ -1,0 +1,34 @@
+<div class="searchbox">
+    <input type="number" [(ngModel)]="search" placeholder="Enter Student Id" class="form-control">
+    <button type="button" class="btn btn-primary" (click)="searchStudent()">Search</button>
+</div>
+
+<div class="studenttable">
+    <h3>Student List</h3>
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">Student ID</th>
+                <th scope="col">Name</th>
+                <th scope="col">Age</th>
+                <th scope="col">Email</th>
+                <th scope="col">Address</th>
+                <th scope="col">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let student of filteredList">
+                <td>{{student.studentId}}</td>
+                <td>{{student.studentName}}</td>
+                <td>{{student.studentAge}}</td>
+                <td>{{student.studentEmail}}</td>
+                <td>{{student.studentAddress}}</td>
+                <td>
+                    <button type="button" class="btn btn-primary" (click)="update(student.studentId)">Update</button>
+                    <button type="button" class="btn btn-danger" (click)="delete(student.studentId)">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    {{message}}
+</div>

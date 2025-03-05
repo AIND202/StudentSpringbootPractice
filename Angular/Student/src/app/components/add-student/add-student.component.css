@@ -1,0 +1,27 @@
+/* Centering the form */
+.form-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background: #eee7e7;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+  }
+  
+  .text-center {
+    text-align: center;
+  }
+  
+  .mb-4 {
+    margin-bottom: 1.5rem;
+  }
+  
+  .fw-bold {
+    font-weight: bold;
+  }
+  
+  .error-message {
+    color: red;
+    font-size: 0.875rem;
+  }
+  

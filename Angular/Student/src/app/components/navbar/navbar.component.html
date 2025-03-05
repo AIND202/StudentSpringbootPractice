@@ -1,0 +1,14 @@
+<nav class="navbar navbar-expand-lg gradient-custom text-color">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/studentlist">Student Application</a>
+    </div>
+    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+      <li class="nav-item" *ngIf="!isAddStudentPage">
+        <a class="nav-link" href="/addstudent">Add Student</a>
+      </li>
+      <li class="nav-item" *ngIf="!isStudentListPage">
+        <a class="nav-link" href="/studentlist">Student List</a>
+      </li>
+    </ul>
+  </nav>
+  
